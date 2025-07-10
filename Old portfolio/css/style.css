@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #121212;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+body.light-mode {
+    background: #f5f7fa;
+    color: #333;
+}
+
+body.light-mode nav, 
+body.light-mode .service-box, 
+body.light-mode .project-box, 
+body.light-mode footer {
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+body.light-mode a, 
+body.light-mode button {
+    color: #333;
+}
+
+body.light-mode button {
+    background: #00aaff;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #00aaff;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero h1, .hero p {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+section {
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.about, .services, .projects, .contact {
+    background: rgba(30, 30, 30, 0.8);
+    margin: 40px auto;
+    padding: 50px;
+    border-radius: 15px;
+    max-width: 900px;
+}
+
+.service-box, .project-box {
+    display: inline-block;
+    background: rgba(30, 30, 30, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    transition: 0.3s;
+    width: 220px;
+}
+
+.service-box:hover, .project-box:hover {
+    background: #00aaff;
+    color: #121212;
+    transform: translateY(-10px);
+}
+
+.github-btn {
+    display: inline-block;
+    background: #00aaff;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.github-btn:hover {
+    background: #008ecc;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(30, 30, 30, 0.8);
+}
+
+/* Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.preloader.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.preloader .loader {
+    border: 4px solid #00aaff;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+body.light-mode form input,
+body.light-mode form textarea {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #00aaff;
+}
+
+form label {
+    text-align: left;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+form button {
+    background: #00aaff;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid #00aaff;
+    border-radius: 5px;
+    width: 100px;
+    margin: auto;
+    font-size: 16px;
+    cursor: pointer;
+    transition: linear 0.1s;
+}
+
+form button:hover {
+    background: transparent;
+    color: #00aaff;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+    
+    nav {
+        padding: 15px 20px;
+        flex-direction: column;
+    }
+    
+    nav ul {
+        margin-top: 15px;
+        gap: 10px;
+    }
+    
+    .service-box, .project-box {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    section {
+        padding: 60px 20px;
+    }
+    
+    .about, .services, .projects, .contact {
+        padding: 30px;
+    }
+    
+    footer {
+        padding: 10px;
+    }
+}

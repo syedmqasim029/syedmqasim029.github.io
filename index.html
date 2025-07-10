@@ -1,392 +1,662 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syed Muhammad Qasim - Portfolio</title>
-    <meta name="description" content="Portfolio of Syed Muhammad Qasim, an AI student and programmer specializing in Java, C++, Python, and web technologies.">
-    <meta name="keywords" content="portfolio, AI student, Java, C++, Python, web technologies">
-    <meta name="author" content="Syed Muhammad Qasim">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="css/style.css">
-=======
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-        body {
-            background: #121212;
-            color: #ffffff;
-            overflow-x: hidden;
-        }
-        body.light-mode {
-            background: #f5f7fa;
-            color: #333;
-        }
-        body.light-mode nav, body.light-mode .service-box, body.light-mode .project-box, body.light-mode footer {
-            background: rgba(255, 255, 255, 0.8);
-            color: #333;
-        }
-        body.light-mode a, body.light-mode button {
-            color: #333;
-        }
-        body.light-mode button {
-            background: #00aaff;
-            color: #fff;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 18px;
-            transition: 0.3s;
-        }
-        a:hover {
-            color: #00aaff;
-        }
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-        }
-        .hero h1, .hero p {
-            position: relative;
-            z-index: 1;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-        }
-        section {
-            padding: 80px 50px;
-            text-align: center;
-        }
-        .about, .services, .projects, .contact {
-            background: rgba(30, 30, 30, 0.8);
-            margin: 40px auto;
-            padding: 50px;
-            border-radius: 15px;
-            max-width: 900px;
-        }
-        .service-box {
-            display: inline-block;
-            background: rgba(30, 30, 30, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px;
-            transition: 0.3s;
-            width: 220px;
-        }
-        .service-box:hover {
-            background: #00aaff;
-            color: #121212;
-            transform: translateY(-10px);
-        }
-        .icons img {
-            width: 50px;
-            margin: 10px;
-        }
-        .project-box {
-            background: rgba(30, 30, 30, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px;
-            text-align: center;
-        }
-        .github-btn {
-            display: inline-block;
-            background: #00aaff;
-            color: white;
-            padding: 10px 20px;
-            margin-top: 10px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .github-btn:hover {
-            background: #008ecc;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: rgba(30, 30, 30, 0.8);
-        }
-        /* Preloader */
-        .preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #121212;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        .preloader.hide {
-            opacity: 0;
-            pointer-events: none;
-        }
-        .preloader .loader {
-            border: 4px solid #00aaff;
-            border-top: 4px solid transparent;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-        /* Contact Design */
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        form input,
-        form textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-
-        form textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        form input:focus,
-        form textarea:focus {
-            outline: none;
-        }
-
-        form label {
-            text-align: left;
-            font-size: 16px;
-            margin-top: 5px;
-        }
-
-        form button {
-            background: #00aaff;
-            color: white;
-            padding: 10px 20px;
-            border: 1px solid #00aaff;
-            border-radius: 5px;
-            width: 100px;
-            margin: auto;
-            font-size: 16px;
-            cursor: pointer;
-            transition: linear 0.1s;
-        }
-
-        form button:hover {
-            background: transparent;
-            color: #00aaff;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem; /* Smaller font size for mobile */
-            }
-            .hero p {
-                font-size: 1rem; /* Smaller font size for mobile */
-                max-width: 90%; /* Adjust text width for smaller screens */
-            }
-            nav {
-                padding: 15px 20px; /* Reduce padding for smaller screens */
-            }
-            nav ul {
-                gap: 10px; /* Reduce gap between nav items */
-            }
-            .service-box {
-                width: 100%; /* Full width for service boxes on mobile */
-                margin: 10px 0; /* Adjust margin for better spacing */
-            }
-            .project-box {
-                width: 100%; /* Full width for project boxes on mobile */
-                margin: 10px 0; /* Adjust margin for better spacing */
-            }
-            .github-btn {
-                width: 100%; /* Full width for GitHub buttons on mobile */
-            }
-            footer {
-                padding: 10px; /* Reduce footer padding for smaller screens */
-            }
-        }
-    </style>
->>>>>>> af9c79d4f36a62962528ddcc9edf3fc9d2eb5537
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syed Muhammad Qasim - AI Developer Portfolio</title>
+  <meta name="description" content="AI Student & Developer | Java | Python | C++ | Web Technologies | Machine Learning" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader"></div>
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-container">
+      <a href="#" class="logo">Qasim<span>.</span></a>
+      
+      <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+      </nav>
     </div>
+  </header>
 
-    <nav>
-        <h1>Qasim's Portfolio</h1>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="animated-bg">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     
-    <!-- Home Section -->
-    <section id="home" class="hero">
-        <h1></h1>
-        <p>Hi, I'm Syed Muhammad Qasim, an AI student and programmer passionate about building modern and intelligent solutions.</p>
-    </section>
-    
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>Hi, I am Syed Muhammad Qasim, an AI student at Mehran University of Engineering and Technology, Jamshoro.</p>
-    </section>
-    
-    <section id="services" class="services">
-        <h2>Services</h2>
-        <div class="service-box">
-            <img src="images/java-logo.svg" width="40px" alt="Java Logo">
-            <p>Java Programming</p>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">Hi, I'm <span>Syed Muhammad Qasim</span></h1>
+          <h2 class="hero-subtitle">AI Student & Python Developer</h2>
+          <div class="cta-buttons">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+          
+          <div class="social-links">
+            <a href="https://github.com/syedmqasim029" class="social-link" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/syed-muhammad-qasim-b61b82343" class="social-link" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://x.com/Syedqasim032" class="social-link" target="_blank" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://discord.com/users/1323331129104666727" class="social-link" target="_blank" aria-label="Discord">
+              <i class="fab fa-discord"></i>
+            </a>
+          </div>
         </div>
-        <div class="service-box">
-            <img src="images/cpp-logo.svg" width="40px" alt="C++ Logo">
-            <p>C++ Programming</p>
+        
+        <div class="hero-image">
+          <img data-src="images/profile.jpeg" alt="Syed Muhammad Qasim" loading="lazy">
         </div>
-        <div class="service-box">
-            <img src="images/python-logo.svg" width="40px" alt="Python Logo">
-            <p>Python</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            Hi, I’m Syed Muhammad Qasim, an AI student and Python developer, currently pursuing my Bachelor’s in Artificial Intelligence at Mehran University of Engineering and Technology
+          </p>
+          
+          <div class="skills-container">
+            <div class="skills-category">
+              <h3>Programming Languages</h3>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <svg class="skill-icon" viewBox="0 0 128 128"><path fill="#0074BD" d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873 3.351-24.439 10.47-55.308-.607-36.115-5.969z"/></svg>
+                  Java
+                </div>
+                <div class="skill-item">
+                  <svg class="skill-icon" viewBox="0 0 128 128"><path fill="#00599C" d="M115.17 26.394l-49.72-16.245c-1.068-.356-2.252-.356-3.32 0l-49.72 16.245c-2.322.784-3.94 2.992-3.94 5.438v65.234c0 2.446 1.618 4.654 3.94 5.438l49.72 16.243c1.068.355 2.252.355 3.32 0l49.72-16.243c2.322-.784 3.94-2.992 3.94-5.438v-65.234c0-2.446-1.618-4.654-3.94-5.438z"/></svg>
+                  C++
+                </div>
+                <div class="skill-item">
+                  <svg class="skill-icon" viewBox="0 0 128 128"><path fill="#3776AB" d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176 0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275 0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.704-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008z"/></svg>
+                  Python
+                </div>
+              </div>
+            </div>
+            
+            <div class="skills-category">
+              <h3>Web Development</h3>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <svg class="skill-icon" viewBox="0 0 128 128"><path fill="#E44D26" d="M19.569 27l8.087 89.919 36.289 9.682 36.39-9.499 8.096-90.102h-88.862zm72.041 20.471l-.507 5.834-.223 2.695h-34.42l1.017 12h32.06l-.271 2.231-2.615 28.909-.192 1.69-22.79 6.134v-.005l-.027.012-22.777-5.916-1.546-17.341h11.168l.79 8.466 12.385 3.139.006-.234v-.012l12.412-3.096 1.296-13.728h-38.555l-2.734-30.836-.267-3.164h55.724l-.133 1.469z"/></svg>
+                  HTML/CSS
+                </div>
+                <div class="skill-item">
+                  <svg class="skill-icon" viewBox="0 0 128 128"><path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185h-125.184z"/></svg>
+                  JavaScript
+                </div>
+              </div>
+            </div>
+            
+            <div class="skills-category">
+              <h3>Database & Tools</h3>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <svg class="skill-icon" viewBox="0 0 128 128"><path fill="#00758F" d="M64 93.5c-19.5 0-35.5-4.5-35.5-9.5s16-9.5 35.5-9.5 35.5 4.5 35.5 9.5-16 9.5-35.5 9.5z"/></svg>
+                  MySQL
+                </div>
+                <div class="skill-item">
+                  <svg class="skill-icon" viewBox="0 0 128 128"><path fill="#439743" d="M117.5 33.5l.3-.2c-.6-1.1-1.5-2.1-2.4-2.6l-48.3-27.9c-.8-.5-1.9-.7-3.1-.7-1.2 0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.3.9 3.4l-.2.1c.5.8 1.2 1.5 1.9 1.9l48.2 27.9c.8.5 1.9.7 3.1.7 1.2 0 2.3-.3 3.1-.7l48-27.9c1.7-1 2.9-3.5 2.9-5.4v-55.8c.1-.8 0-1.7-.4-2.6z"/></svg>
+                  Git
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="service-box">
-            <img src="images/html-logo.svg" width="40px" alt="Web Technologies Logo">
-            <p>Web Technologies</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-title">What I Do</h2>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="service-title">Programming</h3>
+          <p class="service-description">
+            I develop efficient and scalable applications using Java, Python, and C++. My focus is on writing clean code.
+          </p>
         </div>
-    </section>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3 class="service-title">AI & ML</h3>
+          <p class="service-description">
+            Building intelligent systems and machine learning models to solve real-world problems and automate processes.
+          </p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3 class="service-title">Database Design</h3>
+          <p class="service-description">
+            Designing and implementing efficient database structures with MySQL for optimal data storage and retrieval.
+          </p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 class="service-title">Web Development</h3>
+          <p class="service-description">
+            Creating responsive and interactive websites using modern web technologies like HTML, CSS, and JavaScript.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="project-box">
-        <h3>Number Guessing Game</h3>
-        <img src="projects/number-guessing-game.png" width="190" height="150" alt="Number Guessing Game" loading="lazy">
-        <p>A simple number guessing game developed in Java.</p>
-        <a href="https://github.com/qasim032/Java-projects/tree/main/Number%20guessing%20game" class="github-btn" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i> View on GitHub
-        </a>
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">10+</div>
+          <div class="stat-title">Projects Completed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5+</div>
+          <div class="stat-title">Programming Languages</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3+</div>
+          <div class="stat-title">Hours Daily Coding</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2</div>
+          <div class="stat-title">Years Of Study</div>
+        </div>
+      </div>
     </div>
-    <div class="project-box">
-        <h3>Console-Based Calculator in Java</h3>
-        <img src="projects/calculator.jpg" width="190" height="150" alt="Console Calculator" loading="lazy">
-        <p>A Java-based console calculator that performs basic arithmetic operations.</p>
-        <a href="https://github.com/qasim032/Java-projects/tree/main/Console%20based%20Calculator%20in%20Java" class="github-btn" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i> View on GitHub
-        </a>
-    </div>
-    <div class="project-box">
-        <h3>Progress Bar Console</h3>
-        <img src="projects/progress-bar.jpg" width="190" height="150" alt="Console Progress Bar" loading="lazy">
-        <p>Implementing a sleek progress bar in the console to visually track task completion in Java.</p>
-        <a href="https://github.com/qasim032/Java-projects/tree/main/Progress-Bar-Console" class="github-btn" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i> View on GitHub
-        </a>
-    </div>
-    <div class="project-box">
-        <h3>User Management System</h3>
-        <img src="projects/user-management.jpg" width="190" height="150" alt="User Management System" loading="lazy">
-        <p>A system with registration, login, and secure access handling in Java.</p>
-        <a href="https://github.com/qasim032/Java-projects/tree/main/User-Mangement-System" class="github-btn" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i> View on GitHub
-        </a>
-    </div>
-    <div class="project-box">
-        <h3>Attendance Portal</h3>
-        <img src="projects/attendance-portal.jpg" width="190" height="150" alt="Attendance Portal System" loading="lazy">
-        <p>An Attendance Portal project using file handling to manage records efficiently.</p>
-        <a href="https://github.com/qasim032/Java-projects/tree/main/Attendance-Portal" class="github-btn" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i> View on GitHub
-        </a>
-    </div>
-    <div class="project-box"> 
-        <h3>Rock Paper Scissors</h3>
-        <img src="projects/rock-paper-scissors.gif" width="190" height="150" alt="Rock Paper Scissors Game" loading="lazy"> 
-        <p>A simple Rock-Paper-Scissors game implemented in Java.</p> 
-        <a href="https://github.com/qasim032/Java-projects/tree/main/Rock-Paper-Scissors-game" class="github-btn" target="_blank" rel="noopener noreferrer"> 
-            <i class="fab fa-github"></i> View on GitHub
-        </a>
-    </div>
-</section>
-    
+  </section>
 
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <form action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="2c4394d0-8597-4206-8405-a037a40ec569">
-            <label for="name">Name</label>
-            <input type="text" name="name" placeholder="Your Name" required>
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2 class="section-title">My Projects</h2>
+      
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="java">Java</button>
+        <button class="filter-btn" data-filter="python">Python</button>
+        <button class="filter-btn" data-filter="cpp">C++</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+      </div>
+      
+      <div class="projects-grid">
+        <div class="project-card" data-category="java">
+          <img data-src="projects/number-guessing-game.png" class="project-image" alt="Number Guessing Game" loading="lazy">
+          <div class="project-content">
+            <h3 class="project-title">Number Guessing Game</h3>
+            <p class="project-description">
+              A console-based number guessing game where players try to guess a randomly generated number within limited attempts.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Console</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/qasim032/Java-projects/tree/main/Number%20guessing%20game" class="project-link" target="_blank">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card" data-category="java">
+          <img data-src="projects/calculator.jpg" class="project-image" alt="Console Calculator" loading="lazy">
+          <div class="project-content">
+            <h3 class="project-title">Console Calculator</h3>
+            <p class="project-description">
+              A Java-based console calculator that performs basic arithmetic operations with a clean interface.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">OOP</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/qasim032/Java-projects/tree/main/Console%20based%20Calculator%20in%20Java" class="project-link" target="_blank">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+        
+     <div class="project-card" data-category="java">
+          <img data-src="projects/progress-bar.jpg" class="project-image" alt="Progress-bar" loading="lazy">
+          <div class="project-content">
+            <h3 class="project-title">Progress-bar</h3>
+            <p class="project-description">
+              Implementing a sleek progress bar in the console to visually track task completion in Java.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">OOP</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/syedmqasim029/Java-projects/tree/main/Progress-Bar-Console" class="project-link" target="_blank">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
 
-            <label for="email">Email</label>
-            <input type="email" name="email" placeholder="Your Email" required>
+        <div class="project-card" data-category="java">
+          <img data-src="projects/rock-paper-scissors.gif" class="project-image" alt="rock-paper-scissors" loading="lazy">
+          <div class="project-content">
+            <h3 class="project-title">Rock-Paper-Scissors</h3>
+            <p class="project-description">
+              A simple Rock-Paper-Scissors game implemented in Java.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">OOP</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/syedmqasim029/Java-projects/tree/main/Rock-Paper-Scissors-game" class="project-link" target="_blank">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
 
-            <label for="message">Message</label>
-            <textarea name="message" placeholder="Your Message" required></textarea>
 
-            <button type="submit">Send</button>
+        <div class="project-card" data-category="java">
+          <img data-src="projects/user-management.jpg" class="project-image" alt="User-Management" loading="lazy">
+          <div class="project-content">
+            <h3 class="project-title">User-Management</h3>
+            <p class="project-description">
+              A system with registration, login, and secure access handling in Java.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">OOP</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/syedmqasim029/Java-projects/tree/main/User-Mangement-System" class="project-link" target="_blank">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="project-card" data-category="java">
+          <img data-src="projects/Snake-Game.webp" class="project-image" alt="Snake-Game" loading="lazy">
+          <div class="project-content">
+            <h3 class="project-title">Snake-Game</h3>
+            <p class="project-description">
+              A classic Snake game built in Java, featuring smooth movement, collision detection, and score tracking. Navigate the snake to eat food and grow longer while avoiding collisions with the walls or itself.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">OOP</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/syedmqasim029/Java-projects/tree/main/SnakeGame" class="project-link" target="_blank">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="java">
+          <img data-src="projects/Stop-Watch.jfif" class="project-image" alt="Stop-Watch" loading="lazy">
+          <div class="project-content">
+            <h3 class="project-title">Stop-Watch</h3>
+            <p class="project-description">
+                A simple stopwatch application in Java that allows users to start, stop, and reset time easily from the console.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">OOP</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/syedmqasim029/Java-projects/tree/main/StopWatch" class="project-link" target="_blank">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="project-card" data-category="python">
+          <img data-src="projects/FlappyBird.png" class="project-image" alt="FlappyBird" loading="lazy">
+          <div class="project-content">
+            <h3 class="project-title">FlappyBird Override</h3>
+            <p class="project-description">
+                A Python implementation of the classic Flappy Bird game, where players control a bird to fly between pipes without hitting them. This project demonstrates game development concepts using Python and provides a fun, interactive experience.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pygame</span>
+              <span class="tech-tag">FlappyBird</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/syedmqasim029/FlappyBird-Override" class="project-link" target="_blank">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+                
+
+        <div class="project-card" data-category="python">
+          <img data-src="projects/Type-Master.png" class="project-image" alt="Type-Master" loading="lazy">
+          <div class="project-content">
+            <h3 class="project-title">Type-Master</h3>
+            <p class="project-description">
+                Type-Master is a Python-based typing speed test application built with CustomTkinter. It challenges users to type randomly generated words or sentences as quickly and accurately as possible, providing real-time feedback on speed and accuracy. This project helps users improve their typing skills in an interactive and user-friendly environment. 
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Customtkinter</span>
+              <span class="tech-tag">Typing_Master</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/syedmqasim029/Cus_tkinter_Type_Master" class="project-link">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+                        
+
+        <div class="project-card" data-category="python">
+          <img data-src="projects/QR-Code.png" class="project-image" alt="QR-Code" loading="lazy">
+          <div class="project-content">
+            <h3 class="project-title">QR-Code Generator</h3>
+            <p class="project-description">
+                A Python application that generates QR codes from user input using a simple graphical interface built with CustomTkinter. Users can enter text or URLs, instantly generate a QR code, and save it as an image file. This project demonstrates GUI development and QR code generation in Python, making it easy to create and share QR codes for various purposes.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Customtkinter</span>
+              <span class="tech-tag">QR-Code</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/syedmqasim029/QR-code-generator" class="project-link">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="python">
+          <img data-src="projects/EMS.png" class="project-image" alt="EMS" loading="lazy">
+          <div class="project-content">
+            <h3 class="project-title">EMS-Database</h3>
+            <p class="project-description">
+                An Employee Management System (EMS) built with Python, CustomTkinter, and MySQL. This application enables users to add, update, delete, and search employee records through an intuitive graphical interface, with all data securely stored in a MySQL database. It features data validation, persistent storage, and user-friendly controls, making employee data management efficient and accessible for small organizations or personal projects.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Customtkinter</span>
+              <span class="tech-tag">EMS</span>
+              <span class="tech-tag">Database</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/syedmqasim029/EMS_database_mysql_python" class="project-link">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card" data-category="cpp">
+          <img data-src="projects/attendance-portal.jpg" class="project-image" alt="Attendance-Portal" loading="lazy">
+          <div class="project-content">
+            <h3 class="project-title">Attendance-Portal</h3>
+            <p class="project-description">
+              A C++ application for managing student records, featuring add, edit, delete, and search functionalities. The system allows users to store student details, update existing records, remove entries, and search for students by various criteria, utilizing file handling for persistent data storage.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">File Handling</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/syedmqasim029/Attendance-Portal" class="project-link">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card" data-category="web">
+          <img data-src="projects/pw.PNG" class="project-image" alt="Portfolio Website" loading="lazy">
+          <div class="project-content">
+            <h3 class="project-title">Portfolio Website</h3>
+            <p class="project-description">
+              A responsive personal portfolio website built with HTML, CSS, and JavaScript to showcase projects and skills.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/syedmqasim029/syedmqasim029.github.io" class="project-link">
+                <i class="fab fa-github"></i> View Code
+              </a>
+              <a href="https://syedmqasim029.github.io/" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">Results:</h2>
+      
+      <div class="testimonials-container">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>I achieved an A1 grade in my SSC (Matriculation) from Quaid-e-Azam Rangers High School, Jamshoro.</p>
+                </div>
+                <div class="testimonial-author">
+                  <img data-src="projects/SSC.png" alt="SSC" class="author-image" loading="lazy">
+                  <div class="author-info">
+                    <h4>SSC</h4>
+                    <p>A1</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>I achieved an A1 grade in my HSC (Intermediate) at Worker's Intermediate College, SITE Kotri.</p>
+                </div>
+                <div class="testimonial-author">
+                  <img data-src="projects/HSC.jpg" alt="HSC" class="author-image" loading="lazy">
+                  <div class="author-info">
+                    <h4>HSC</h4>
+                    <p>A1</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>I achieved a 3.82 CGPA in my first year of BSAI at Mehran University of Engineering and Technology (MUET).</p>
+                </div>
+                <div class="testimonial-author">
+                  <img data-src="projects/muet.png" alt="First year" class="author-image" loading="lazy">
+                  <div class="author-info">
+                    <h4>First year</h4>
+                    <p>Cgpa:3.82</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <a href="mailto:syedmqasim0321@gmail.com">syedmqasim0321@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Location</h3>
+              <p>Jamshoro, Sindh, Pakistan</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-university"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Education</h3>
+              <p>Mehran University of Engineering and Technology</p>
+            </div>
+          </div>
+        </div>
+        
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="2c4394d0-8597-4206-8405-a037a40ec569">
+          <div class="form-group">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea id="message" name="message" class="form-control" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 Syed Muhammad Qasim. All rights reserved.</p>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <script src="js/script.js"></script>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <a href="#" class="footer-logo">Qasim<span>.</span></a>
+        
+        <div class="footer-links">
+          <a href="#home" class="footer-link">Home</a>
+          <a href="#about" class="footer-link">About</a>
+          <a href="#services" class="footer-link">Services</a>
+          <a href="#projects" class="footer-link">Projects</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </div>
+        
+        <div class="footer-social">
+          <a href="https://github.com/syedmqasim029" class="footer-social-link" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/syed-muhammad-qasim-b61b82343" class="footer-social-link" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://x.com/Syedqasim032" class="footer-social-link" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://discord.com/users/1323331129104666727" class="footer-social-link" target="_blank" aria-label="Discord">
+            <i class="fab fa-discord"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Syed Muhammad Qasim. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
